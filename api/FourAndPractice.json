@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "Sam",
+      "email": "Sam@email.com",
+      "password": "Sam",
+      "id": 1
+    },
+    {
+      "name": "Joe",
+      "email": "Joe@email.com",
+      "password": "Joe",
+      "id": 2
+    }
+  ],
+  "practiceCards": [
+      {
+          "title": "Counting",
+          "description": "Counting out 3 measures",
+          "categoryId": 1,
+          "userId": 1,
+          "id": 1
+      }
+  ],
+  "practices": [
+      {
+          "cardId": [1, 2, 3],
+          "userId": 1,
+          "id": 1
+      }
+  ],
+  "practiceSessions": [
+      {
+          "id": 1,
+          "practiceId": 1
+      }
+  ],
+  "categories": [
+    {
+      "title": "Rhythm",
+      "id": 1
+    }
+  ]
+}
