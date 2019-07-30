@@ -28,7 +28,7 @@ export default class Login extends Component {
             );
             if (singleUser) {
                 sessionStorage.setItem("userId", singleUser.id);
-                // this.props.history.push("/news");
+                this.props.history.push("/cards");
             }
             else {
                 window.alert("Invalid login information. Please try again or register a new account.")

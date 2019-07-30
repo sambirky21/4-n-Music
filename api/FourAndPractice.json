@@ -13,32 +13,57 @@
       "id": 2
     }
   ],
-  "practiceCards": [
-      {
-          "title": "Counting",
-          "description": "Counting out 3 measures",
-          "categoryId": 1,
-          "userId": 1,
-          "id": 1
-      }
+  "cards": [
+    {
+      "title": "Counting",
+      "description": "Counting out 3 measures",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "Scales 2",
+      "description": "Blah",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "title": "Scales 3",
+      "description": "B",
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "title": "Scales 4",
+      "description": "B",
+      "categoryId": 2
+    }
   ],
-  "practices": [
-      {
-          "cardId": [1, 2, 3],
-          "userId": 1,
-          "id": 1
-      }
+  "sessions": [
+    {
+      "userId": 1,
+      "id": 1
+    }
   ],
   "practiceSessions": [
-      {
-          "id": 1,
-          "practiceId": 1
-      }
+    {
+      "id": 1,
+      "practiceId": 1,
+      "cardId": 1
+    }
   ],
   "categories": [
     {
       "title": "Rhythm",
       "id": 1
+    },
+    {
+      "title": "Rhythm",
+      "id": 2
     }
   ]
 }

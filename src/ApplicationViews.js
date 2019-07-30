@@ -1,6 +1,9 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import PracticeCardEditForm from "./components/Cards/PracticeCardEditForm"
+import PracticeCardsList from "./components/Cards/PracticeCardsList";
+import PracticeCardForm from "./components/Cards/PracticeCardForm";
 import APIManager from "./module/APIManager";
 import Login from "./components/Authentication/Login";
 import Register from "./components/Authentication/Register";
@@ -10,14 +13,21 @@ class ApplicationViews extends Component {
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   state = {
-    users: []
+    users: [],
+    PracticeCards: []
   };
 
   componentDidMount() {
     const newState = {};
+    // console.log("component did mount")
 
     APIManager.getAll("users")
       .then(users => (newState.users = users))
+    APIManager.getAll("cards")
+      .then(cards => (newState.PracticeCards = cards))
+      .then(() => this.setState(newState))
+      // .then(console.log(newState))
+
   }
 
   addUser = user => {
@@ -30,36 +40,36 @@ class ApplicationViews extends Component {
       );
   };
 
-//   deleteArticle = id => {
-//     return APIManager.delete("news", id)
-//       .then(() => APIManager.getAllNews("news"))
-//       .then(news => {
-//         // this.props.history.push("/news")
-//         this.setState({
-//           news: news
-//         });
-//       });
-//   };
+  deletePracticeCard = id => {
+    return APIManager.delete("cards", id)
+      .then(() => APIManager.getAll("cards"))
+      .then(PracticeCards => {
+        this.props.history.push("/cards")
+        this.setState({
+          PracticeCards: PracticeCards
+        });
+      });
+  };
 
-//   addArticle = article => {
-//     return APIManager.post(article, "news")
-//       .then(() => APIManager.getAllNews("news"))
-//       .then(news =>
-//         this.setState({
-//           news: news
-//         })
-//       );
-//   };
+  addPracticeCard = PracticeCard => {
+    return APIManager.post(PracticeCard, "cards")
+      .then(() => APIManager.getAll("cards"))
+      .then(PracticeCards =>
+        this.setState({
+          PracticeCards : PracticeCards
+        })
+      );
+  };
 
-//   updateArticle = (editedArticle) => {
-//     return APIManager.put(editedArticle, "news")
-//       .then(() => APIManager.getAllNews("news"))
-//       .then(news =>
-//         this.setState({
-//           news: news
-//         })
-//       );
-//   };
+  updatePracticeCard = (editedCard) => {
+    return APIManager.put(editedCard, "cards")
+      .then(() => APIManager.getAll("cards"))
+      .then(PracticeCards =>
+        this.setState({
+          PracticeCards : PracticeCards
+        })
+      );
+  };
 
   render() {
     return (
@@ -79,40 +89,39 @@ class ApplicationViews extends Component {
             return <Register {...props} addUser={this.addUser} />;
           }}
         />
-        {/* Start news routes */}
-        {/* <Route
+        {/* Start cards routes */}
+        <Route
           exact
           path="/cards"
           render={props => {
             if (this.isAuthenticated()) {
-              <NewsList
+                  return (<PracticeCardsList
                   {...props}
-                  deleteArticle={this.deleteArticle}
-                  news={this.state.news}
-                />
+                  deletePracticeCard={this.deletePracticeCard}
+                  PracticeCards ={this.state.PracticeCards}
+                />)
             } else {
               return <Redirect to="/" />;
             }
           }}
-        /> */}
-        {/* <Route
+        />
+        <Route
           exact
-          path="/news/new"
+          path="/cards/new"
           render={props => {
-            return <NewsForm {...props} addArticle={this.addArticle} />;
+            return <PracticeCardForm {...props} addPracticeCard={this.addPracticeCard} />;
           }}
         />
         <Route
           exact
-          path="/news/:newsId(\d+)/edit"
+          path="/cards/:cardsId(\d+)/edit"
           render={props => {
             return (
-              <NewsEditForm {...props} updateArticle={this.updateArticle} />
+              <PracticeCardEditForm {...props} updatePracticeCard={this.updatePracticeCard} />
             );
           }}
         />
-        End news routes
-        /> */}
+        {/* End cards routes */}
         </React.Fragment>
     );
   }
