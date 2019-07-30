@@ -22,25 +22,25 @@
       "id": 1
     },
     {
+      "id": 2,
       "userId": 2,
-      "title": "Scales",
+      "title": "Scales 2",
       "description": "Blah",
-      "categoryId": "",
-      "id": 2
+      "categoryId": 2
     },
     {
+      "id": 3,
       "userId": 2,
-      "title": "Scales",
+      "title": "Scales 3",
       "description": "B",
-      "categoryId": "",
-      "id": 3
+      "categoryId": 2
     },
     {
+      "id": 4,
       "userId": 2,
-      "title": "Scales",
+      "title": "Scales 4",
       "description": "B",
-      "categoryId": "",
-      "id": 4
+      "categoryId": 2
     }
   ],
   "sessions": [
@@ -60,6 +60,10 @@
     {
       "title": "Rhythm",
       "id": 1
+    },
+    {
+      "title": "Rhythm",
+      "id": 2
     }
   ]
 }

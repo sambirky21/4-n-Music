@@ -1,6 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import PracticeCardEditForm from "./components/Cards/PracticeCardEditForm"
 import PracticeCardsList from "./components/Cards/PracticeCardsList";
 import PracticeCardForm from "./components/Cards/PracticeCardForm";
 import APIManager from "./module/APIManager";
@@ -60,7 +61,7 @@ class ApplicationViews extends Component {
       );
   };
 
-  updateArticle = (editedCard) => {
+  updatePracticeCard = (editedCard) => {
     return APIManager.put(editedCard, "cards")
       .then(() => APIManager.getAll("cards"))
       .then(PracticeCards =>
@@ -111,17 +112,16 @@ class ApplicationViews extends Component {
             return <PracticeCardForm {...props} addPracticeCard={this.addPracticeCard} />;
           }}
         />
-        {/* <Route
+        <Route
           exact
-          path="/news/:newsId(\d+)/edit"
+          path="/cards/:cardsId(\d+)/edit"
           render={props => {
             return (
-              <NewsEditForm {...props} updateArticle={this.updateArticle} />
+              <PracticeCardEditForm {...props} updatePracticeCard={this.updatePracticeCard} />
             );
           }}
-        /> */}
+        />
         {/* End cards routes */}
-        {/* /> */}
         </React.Fragment>
     );
   }

@@ -26,7 +26,7 @@ export default class PracticeCardForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             description: this.state.description,
-            categoryId: this.state.categoryId,
+            categoryId: this.state.categoryId
           }
         this.props
             .addPracticeCard(pCard)
