@@ -13,27 +13,48 @@
       "id": 2
     }
   ],
-  "practiceCards": [
-      {
-          "title": "Counting",
-          "description": "Counting out 3 measures",
-          "categoryId": 1,
-          "userId": 1,
-          "id": 1
-      }
+  "cards": [
+    {
+      "title": "Counting",
+      "description": "Counting out 3 measures",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "title": "Scales",
+      "description": "Blah",
+      "categoryId": "",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "title": "Scales",
+      "description": "B",
+      "categoryId": "",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "title": "Scales",
+      "description": "B",
+      "categoryId": "",
+      "id": 4
+    }
   ],
-  "practices": [
-      {
-          "cardId": [1, 2, 3],
-          "userId": 1,
-          "id": 1
-      }
+  "sessions": [
+    {
+      "userId": 1,
+      "id": 1
+    }
   ],
   "practiceSessions": [
-      {
-          "id": 1,
-          "practiceId": 1
-      }
+    {
+      "id": 1,
+      "practiceId": 1,
+      "cardId": 1
+    }
   ],
   "categories": [
     {

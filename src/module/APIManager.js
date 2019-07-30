@@ -8,7 +8,14 @@ export default Object.create(null, {
   },
   getAll: {
     value: function(resource) {
+      // console.log(resource)
       return fetch(`${remoteURL}/${resource}`).then(data => data.json());
+    }
+  },
+
+  getAllExpand: {
+    value: function (resource, expandResource) {
+        return fetch(`${remoteURL}/${resource}?_expand=${expandResource}&_sort=timeStamp`).then(data => data.json())
     }
   },
 
