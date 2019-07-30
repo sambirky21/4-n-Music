@@ -20,7 +20,7 @@ export default class NewsEditForm extends Component {
   updateExistingPracticeCard = evt => {
     evt.preventDefault();
 
-    if (this.state.title === "" || this.state.description === "" ) {
+    if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" ) {
         window.alert("Please Fill Out All Sections");
     }
     else {
@@ -29,7 +29,7 @@ export default class NewsEditForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             description: this.state.description,
-            categoryId: this.state.categoryId
+            categoryId: parseInt(this.state.categoryId)
         };
 
     this.props
@@ -88,6 +88,22 @@ export default class NewsEditForm extends Component {
               value={this.state.synopsis}
             />
           </div> */}
+            <div className="form-group">
+                <label htmlFor="categoryId">Category</label>
+                <select
+                    name="category"
+                    id="categoryId"
+                    onChange={this.handleFieldChange}
+                    value={this.state.categoryId}
+                    >
+                    <option value="">Select a Category</option>
+                    {this.props.Categories.map(category => (
+                        <option key={category.id} id={category.id} value={category.id}>
+                        {category.title}
+                        </option>
+                    ))}
+                </select>
+            </div>
           <button
             type="submit"
             onClick={this.updateExistingPracticeCard}

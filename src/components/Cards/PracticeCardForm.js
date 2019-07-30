@@ -18,7 +18,7 @@ export default class PracticeCardForm extends Component {
 
     constructPracticeCard = evt => {
         evt.preventDefault();
-        if (this.state.title === "" || this.state.description === "" ) {
+        if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" ) {
           window.alert("Please Fill Out All Sections");
         }
         else {
@@ -26,7 +26,7 @@ export default class PracticeCardForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             description: this.state.description,
-            categoryId: this.state.categoryId
+            categoryId: parseInt(this.state.categoryId)
           }
         this.props
             .addPracticeCard(pCard)
@@ -60,6 +60,22 @@ export default class PracticeCardForm extends Component {
                     id="description"
                     placeholder="Description"
                 />
+            </div>
+            <div className="form-group">
+                <label htmlFor="category">Category</label>
+                <select
+                    defaultValue=""
+                    name="category"
+                    id="categoryId"
+                    onChange={this.handleFieldChange}
+                    >
+                    <option value="">Select a Category</option>
+                    {this.props.Categories.map(category => (
+                        <option key={category.id} id={category.id} value={category.id}>
+                        {category.title}
+                        </option>
+                    ))}
+                </select>
             </div>
             {/* <div className="form-group">
                 <label htmlFor="synopsis">Synopsis</label>
