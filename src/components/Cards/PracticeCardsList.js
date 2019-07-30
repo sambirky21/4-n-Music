@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./cards.css";
-import PracticeCard from "./PracticeCard";
+// import PracticeCard from "./PracticeCard";
+import CategoryList from "../Categories/CategoryList"
 
 export default class PracticeCardsList extends Component {
   render() {
@@ -18,14 +19,9 @@ export default class PracticeCardsList extends Component {
           </button>
         </div>
         <section className="news">
-          {this.props.PracticeCards
-            .filter(
-              card =>
-                parseInt(card.userId) ===
-                parseInt(sessionStorage.getItem("userId"))
-            )
-            .map(card => (
-              <PracticeCard key={card.id} card={card} {...this.props} />
+          {this.props.Categories
+            .map(category => (
+              <CategoryList key={category.id} category={category} {...this.props} />
             ))
           }
         </section>

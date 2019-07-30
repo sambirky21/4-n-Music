@@ -22,25 +22,116 @@
       "id": 1
     },
     {
-      "id": 2,
       "userId": 2,
-      "title": "Scales 2",
-      "description": "Blah",
-      "categoryId": 2
+      "title": "a",
+      "description": "a",
+      "categoryId": 1,
+      "id": 8
     },
     {
-      "id": 3,
       "userId": 2,
-      "title": "Scales 3",
-      "description": "B",
-      "categoryId": 2
+      "title": "b",
+      "description": "b",
+      "categoryId": 1,
+      "id": 9
     },
     {
-      "id": 4,
       "userId": 2,
-      "title": "Scales 4",
-      "description": "B",
-      "categoryId": 2
+      "title": "c",
+      "description": "c",
+      "categoryId": 1,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "title": "d",
+      "description": "d",
+      "categoryId": 1,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "title": "e",
+      "description": "e",
+      "categoryId": 1,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "title": "f",
+      "description": "f",
+      "categoryId": 1,
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "title": "g",
+      "description": "g",
+      "categoryId": 1,
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "title": "h",
+      "description": "h",
+      "categoryId": 1,
+      "id": 15
+    },
+    {
+      "userId": 2,
+      "title": "i",
+      "description": "i",
+      "categoryId": 2,
+      "id": 16
+    },
+    {
+      "userId": 2,
+      "title": "j",
+      "description": "j",
+      "categoryId": 2,
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "title": "k",
+      "description": "k",
+      "categoryId": 2,
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "title": "l",
+      "description": "l",
+      "categoryId": 2,
+      "id": 19
+    },
+    {
+      "userId": 2,
+      "title": "m",
+      "description": "m",
+      "categoryId": 2,
+      "id": 20
+    },
+    {
+      "userId": 2,
+      "title": "n",
+      "description": "n",
+      "categoryId": 2,
+      "id": 21
+    },
+    {
+      "userId": 2,
+      "title": "o",
+      "description": "o",
+      "categoryId": 2,
+      "id": 22
+    },
+    {
+      "userId": 2,
+      "title": "p",
+      "description": "p",
+      "categoryId": 2,
+      "id": 23
     }
   ],
   "sessions": [
@@ -62,7 +153,7 @@
       "id": 1
     },
     {
-      "title": "Rhythm",
+      "title": "Scales",
       "id": 2
     }
   ]

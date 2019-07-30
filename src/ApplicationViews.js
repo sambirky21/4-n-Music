@@ -2,7 +2,8 @@ import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import PracticeCardEditForm from "./components/Cards/PracticeCardEditForm"
-import PracticeCardsList from "./components/Cards/PracticeCardsList";
+// import PracticeCardsList from "./components/Cards/PracticeCardsList";
+import CategoryList from "./components/Categories/CategoryList"
 import PracticeCardForm from "./components/Cards/PracticeCardForm";
 import APIManager from "./module/APIManager";
 import Login from "./components/Authentication/Login";
@@ -14,7 +15,8 @@ class ApplicationViews extends Component {
 
   state = {
     users: [],
-    PracticeCards: []
+    PracticeCards: [],
+    Categories: [],
   };
 
   componentDidMount() {
@@ -25,8 +27,10 @@ class ApplicationViews extends Component {
       .then(users => (newState.users = users))
     APIManager.getAll("cards")
       .then(cards => (newState.PracticeCards = cards))
+    APIManager.getAll("categories")
+      .then(categories => (newState.Categories = categories))
       .then(() => this.setState(newState))
-      // .then(console.log(newState))
+      .then(console.log(newState))
 
   }
 
@@ -90,7 +94,7 @@ class ApplicationViews extends Component {
           }}
         />
         {/* Start cards routes */}
-        <Route
+        {/* <Route
           exact
           path="/cards"
           render={props => {
@@ -98,7 +102,26 @@ class ApplicationViews extends Component {
                   return (<PracticeCardsList
                   {...props}
                   deletePracticeCard={this.deletePracticeCard}
+                  Categories={this.state.Categories}
                   PracticeCards ={this.state.PracticeCards}
+                  // may not have to pass above here anymore. Should just be passed to Category List. Then Category List will be rendered in PracticeList
+                />)
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        /> */}
+        <Route
+          exact
+          path="/cards"
+          render={props => {
+            if (this.isAuthenticated()) {
+                  return (<CategoryList
+                  {...props}
+                  deletePracticeCard={this.deletePracticeCard}
+                  Categories={this.state.Categories}
+                  PracticeCards ={this.state.PracticeCards}
+                  // may not have to pass above here anymore. Should just be passed to Category List. Then Category List will be rendered in PracticeList
                 />)
             } else {
               return <Redirect to="/" />;
@@ -109,7 +132,7 @@ class ApplicationViews extends Component {
           exact
           path="/cards/new"
           render={props => {
-            return <PracticeCardForm {...props} addPracticeCard={this.addPracticeCard} />;
+            return <PracticeCardForm {...props} addPracticeCard={this.addPracticeCard} Categories={this.state.Categories} />;
           }}
         />
         <Route
@@ -117,7 +140,7 @@ class ApplicationViews extends Component {
           path="/cards/:cardsId(\d+)/edit"
           render={props => {
             return (
-              <PracticeCardEditForm {...props} updatePracticeCard={this.updatePracticeCard} />
+              <PracticeCardEditForm {...props} updatePracticeCard={this.updatePracticeCard} Categories={this.state.Categories} />
             );
           }}
         />
