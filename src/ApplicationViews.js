@@ -5,6 +5,7 @@ import PracticeCardEditForm from "./components/Cards/PracticeCardEditForm"
 // import PracticeCardsList from "./components/Cards/PracticeCardsList";
 import CategoryList from "./components/Categories/CategoryList"
 import PracticeCardForm from "./components/Cards/PracticeCardForm";
+import SessionList from "./components/Sessions/SessionList"
 import APIManager from "./module/APIManager";
 import Login from "./components/Authentication/Login";
 import Register from "./components/Authentication/Register";
@@ -17,6 +18,8 @@ class ApplicationViews extends Component {
     users: [],
     PracticeCards: [],
     Categories: [],
+    PracticeSessionCards: [],
+    Sessions: []
   };
 
   componentDidMount() {
@@ -73,6 +76,15 @@ class ApplicationViews extends Component {
           PracticeCards : PracticeCards
         })
       );
+  };
+
+  createPracticeSessionObject = PracticeSessionCard => {
+    return APIManager.post(PracticeSessionCard, "practiceSessions")
+      .then(() => APIManager.getAll("practiceSessions"))
+      .then(PracticeSessionCards => this.setState({
+        PracticeSessionCards: PracticeSessionCards
+      })
+    );
   };
 
   render() {
@@ -145,6 +157,24 @@ class ApplicationViews extends Component {
           }}
         />
         {/* End cards routes */}
+        {/* Start session routes */}
+        <Route
+          exact
+          path="/practice"
+          render={props => {
+            if (this.isAuthenticated()) {
+                  return (<SessionList
+                  {...props}
+                  PracticeCards={this.state.PracticeCards}
+                  Sessions={this.state.Sessions}
+
+                />)
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
+        {/* End sesion routes */}
         </React.Fragment>
     );
   }
