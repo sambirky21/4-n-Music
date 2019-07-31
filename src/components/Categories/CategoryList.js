@@ -31,8 +31,8 @@ export default class CategoryList extends Component {
                         parseInt(sessionStorage.getItem("userId"))
                         )
                         .filter(card => card.categoryId === category.id)
-                        .map(card => ( <PracticeCard key={card.id} card={card} {...this.props} />
-                        ))
+                        .map(card => <PracticeCard key={card.id} card={card} {...this.props} />
+                        )
                 }
                 </div>
             </div>

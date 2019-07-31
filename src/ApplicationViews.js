@@ -31,7 +31,12 @@ class ApplicationViews extends Component {
     APIManager.getAll("cards")
       .then(cards => (newState.PracticeCards = cards))
     APIManager.getAll("categories")
-      .then(categories => (newState.Categories = categories))
+    .then(categories => (newState.Categories = categories))
+    APIManager.getAll("sessions")
+      .then(sessions => (newState.Sessions = sessions))
+    // Below gets data that contains the foreign keys of sessions and practice cards, not the literal cards
+      APIManager.getAll("practiceSessionCards")
+      .then(practiceData => (newState.PracticeSessionCards = practiceData))
       .then(() => this.setState(newState))
       .then(console.log(newState))
 
@@ -79,8 +84,8 @@ class ApplicationViews extends Component {
   };
 
   createPracticeSessionObject = PracticeSessionCard => {
-    return APIManager.post(PracticeSessionCard, "practiceSessions")
-      .then(() => APIManager.getAll("practiceSessions"))
+    return APIManager.post(PracticeSessionCard, "practiceSessionCards")
+      .then(() => APIManager.getAll("practiceSessionCards"))
       .then(PracticeSessionCards => this.setState({
         PracticeSessionCards: PracticeSessionCards
       })
@@ -131,8 +136,11 @@ class ApplicationViews extends Component {
                   return (<CategoryList
                   {...props}
                   deletePracticeCard={this.deletePracticeCard}
+                  createPracticeSessionObject={this.createPracticeSessionObject}
                   Categories={this.state.Categories}
-                  PracticeCards ={this.state.PracticeCards}
+                  PracticeCards={this.state.PracticeCards}
+                  Sessions={this.state.Sessions}
+                  PracticeSessionCards={this.state.PracticeSessionCards}
                   // may not have to pass above here anymore. Should just be passed to Category List. Then Category List will be rendered in PracticeList
                 />)
             } else {
@@ -167,14 +175,15 @@ class ApplicationViews extends Component {
                   {...props}
                   PracticeCards={this.state.PracticeCards}
                   Sessions={this.state.Sessions}
-
+                  PracticeSessionCards={this.state.PracticeSessionCards}
+                  createPracticeSessionObject={this.createPracticeSessionObject}
                 />)
             } else {
               return <Redirect to="/" />;
             }
           }}
         />
-        {/* End sesion routes */}
+        {/* End session routes */}
         </React.Fragment>
     );
   }
