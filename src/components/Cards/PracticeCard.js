@@ -4,6 +4,19 @@ import React, { Component } from "react";
 import "./cards.css";
 
 export default class PracticeCard extends Component {
+
+  createPracticeSessionCard = evt => {
+    evt.preventDefault()
+    {
+      const createPSCard = {
+        userId: parseInt(sessionStorage.getItem("userId")),
+        practiceId: parseInt(this.props.Sessions[0].id),
+        cardId: parseInt(this.props.card.id)
+      };
+      this.props.createPracticeSessionObject(createPSCard)
+        .then(() => this.props.history.push("/cards"))
+    }
+  }
   render() {
     return (
       <div key={this.props.card.id} className="card w-25 bg-light">
@@ -14,9 +27,7 @@ export default class PracticeCard extends Component {
             <button
               type="button"
               className="btn btn-warning btn-sm"
-              onClick={() =>
-                null
-              }
+              onClick={this.createPracticeSessionCard}
             >
               Add To Practice
             </button>
