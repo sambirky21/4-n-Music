@@ -33,7 +33,7 @@ export default class Register extends Component {
             .then(() => APIManager.getAll("users").then(users => users.find(user => user.password === this.state.password))
             .then(foundUser =>
                 sessionStorage.setItem("userId", foundUser.id))
-            .then(() => this.createFirstSession)
+            .then(() => this.createFirstSession())
             .then(() =>
                 this.props.history.push("/cards")
                 ))
@@ -41,16 +41,12 @@ export default class Register extends Component {
         })
     }
 
-    createFirstSession = event => {
-        event.preventDefault()
-        APIManager.getAll("users").then((user) => {
-            if(user.id === this.state.userId) {
+    createFirstSession = () => {
             let firstSession = {
-                userId: this.state.userId
+                userId: parseInt(sessionStorage.getItem("userId"))
             }
-                this.props.addSessionOnRegister(firstSession)}
-    })
-}
+                this.props.addSessionOnRegister(firstSession)
+            }
 
     render() {
         return (

@@ -11,146 +11,127 @@
       "email": "Joe@email.com",
       "password": "Joe",
       "id": 2
-    },
-    {
-      "name": "Karla",
-      "email": "Karla@email.com",
-      "password": "Karla",
-      "id": 3
-    },
-    {
-      "name": "Karla2",
-      "email": "Karla2@email.com",
-      "password": "Karla2",
-      "id": 4
     }
   ],
   "cards": [
     {
-      "title": "Counting",
-      "description": "Counting out 3 measures",
+      "title": "a",
+      "description": "a",
       "categoryId": 1,
       "userId": 1,
       "id": 1
     },
     {
-      "id": 8,
       "userId": 2,
       "title": "a",
       "description": "a",
-      "categoryId": 1
+      "categoryId": 1,
+      "id": 2
     },
     {
-      "id": 9,
       "userId": 2,
       "title": "b",
       "description": "b",
-      "categoryId": 1
+      "categoryId": 1,
+      "id": 3
     },
     {
       "userId": 2,
       "title": "c",
       "description": "c",
       "categoryId": 1,
-      "id": 10
+      "id": 4
     },
     {
       "userId": 2,
       "title": "d",
       "description": "d",
       "categoryId": 1,
-      "id": 11
+      "id": 5
     },
     {
       "userId": 2,
       "title": "e",
       "description": "e",
       "categoryId": 1,
-      "id": 12
+      "id": 6
     },
     {
       "userId": 2,
       "title": "f",
       "description": "f",
       "categoryId": 1,
-      "id": 13
+      "id": 7
     },
     {
       "userId": 2,
       "title": "g",
       "description": "g",
       "categoryId": 1,
-      "id": 14
+      "id": 8
     },
     {
       "userId": 2,
       "title": "h",
       "description": "h",
       "categoryId": 1,
-      "id": 15
+      "id": 9
     },
     {
       "userId": 2,
       "title": "i",
       "description": "i",
       "categoryId": 2,
-      "id": 16
+      "id": 10
     },
     {
       "userId": 2,
       "title": "j",
       "description": "j",
       "categoryId": 2,
-      "id": 17
+      "id": 11
     },
     {
       "userId": 2,
       "title": "k",
       "description": "k",
       "categoryId": 2,
-      "id": 18
+      "id": 12
     },
     {
       "userId": 2,
       "title": "l",
       "description": "l",
       "categoryId": 2,
-      "id": 19
+      "id": 13
     },
     {
       "userId": 2,
       "title": "m",
       "description": "m",
       "categoryId": 2,
-      "id": 20
+      "id": 14
     },
     {
       "userId": 2,
       "title": "n",
       "description": "n",
       "categoryId": 2,
-      "id": 21
+      "id": 15
     },
     {
       "userId": 2,
       "title": "o",
       "description": "o",
       "categoryId": 2,
-      "id": 22
+      "id": 16
     },
     {
       "userId": 2,
       "title": "p",
       "description": "p",
       "categoryId": 2,
-      "id": 23
-    },
-    {
-      "id": 24,
-      "userId": 4,
-      "title": "a",
-      "description": "a",
-      "categoryId": 2
+      "id": 17
     }
   ],
   "sessions": [
@@ -161,84 +142,38 @@
     {
       "userId": 2,
       "id": 2
-    },
-    {
-      "userId": 4,
-      "id": 3
     }
   ],
   "practiceSessionCards": [
     {
       "userId": 1,
       "practiceId": 1,
-      "cardId": 11,
+      "cardId": 1,
       "id": 5
     },
     {
       "userId": 2,
       "practiceId": 2,
-      "cardId": 8,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "practiceId": 2,
-      "cardId": 9,
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "practiceId": 2,
-      "cardId": 10,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "practiceId": 1,
-      "cardId": 15,
-      "id": 9
-    },
-    {
-      "userId": 2,
-      "practiceId": 2,
-      "cardId": 12,
-      "id": 10
-    },
-    {
-      "userId": 2,
-      "practiceId": 1,
-      "cardId": 19,
+      "cardId": 1,
       "id": 11
     },
     {
       "userId": 2,
-      "practiceId": 1,
-      "cardId": 13,
+      "practiceId": 2,
+      "cardId": 2,
       "id": 12
     },
     {
       "userId": 2,
-      "practiceId": 1,
-      "cardId": 18,
+      "practiceId": 2,
+      "cardId": 3,
       "id": 13
     },
     {
-      "userId": 4,
-      "practiceId": 1,
-      "cardId": 24,
-      "id": 14
-    },
-    {
-      "userId": 4,
-      "practiceId": 1,
-      "cardId": 24,
-      "id": 15
-    },
-    {
       "userId": 2,
-      "practiceId": null,
-      "cardId": 9,
-      "id": 16
+      "practiceId": 2,
+      "cardId": 4,
+      "id": 14
     }
   ],
   "categories": [

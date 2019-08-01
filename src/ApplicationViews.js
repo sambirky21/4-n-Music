@@ -52,7 +52,7 @@ class ApplicationViews extends Component {
       );
   };
 
-  addSessionOnRegister = session => {
+  addSessionOnRegister = (session) => {
     return APIManager.post(session, "sessions")
       .then(() => APIManager.getAll("sessions"))
       .then(Sessions =>
