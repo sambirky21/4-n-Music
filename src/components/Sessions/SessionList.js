@@ -11,7 +11,7 @@ export default class SessionList extends Component {
         <section>
             {/* going to filter over all PracticeSessionCards then map over Practice Cards */}
             {   this.props.Sessions.filter(session =>
-                    session.id === parseInt(sessionStorage.getItem("userId")))
+                    session.userId === parseInt(sessionStorage.getItem("userId")))
                 .map(session =>
                 <div key={session.id} className="container mt-3 list-group-item list-group-item-light bg-secondary text-white">
 
@@ -24,7 +24,7 @@ export default class SessionList extends Component {
                                 return this.props.PracticeCards
                                 .filter(card =>
                                 (data.cardId === card.id))
-                                .map(card => <PracticeCard key={card.id} card={card} {...this.props} />)
+                                .map(card => <PracticeCard key={card.id} session={session} card={card} {...this.props} />)
                                 }
                             )
                     }
@@ -37,6 +37,7 @@ export default class SessionList extends Component {
     );
   }
 }
+// .map(session => <PracticeCard key={session.id} session={session} {...this.props} />)
 
 // if(this.props.Sessions.userId === parseInt(sessionStorage.getItem("userId")))
 

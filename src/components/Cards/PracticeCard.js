@@ -7,15 +7,14 @@ export default class PracticeCard extends Component {
 
   createPracticeSessionCard = evt => {
     evt.preventDefault()
-    {
       const createPSCard = {
         userId: parseInt(sessionStorage.getItem("userId")),
-        practiceId: parseInt(this.props.Sessions.id),
+        practiceId: parseInt(this.props.session.id),
+        // need to get Sessions props from SessionList
         cardId: parseInt(this.props.card.id)
       };
       this.props.createPracticeSessionObject(createPSCard)
         .then(() => this.props.history.push("/cards"))
-    }
   }
   render() {
     console.log("something")
