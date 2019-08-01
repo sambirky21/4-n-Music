@@ -5,7 +5,8 @@ export default class Register extends Component {
     state = {
         name: "",
         email: "",
-        password: ""
+        password: "",
+        userId: ""
     };
 
     handleFieldChange = (evt) => {
@@ -32,12 +33,24 @@ export default class Register extends Component {
             .then(() => APIManager.getAll("users").then(users => users.find(user => user.password === this.state.password))
             .then(foundUser =>
                 sessionStorage.setItem("userId", foundUser.id))
-                .then(() =>
+            .then(() => this.createFirstSession)
+            .then(() =>
                 this.props.history.push("/cards")
                 ))
             }
         })
     }
+
+    createFirstSession = event => {
+        event.preventDefault()
+        APIManager.getAll("users").then((user) => {
+            if(user.id === this.state.userId) {
+            let firstSession = {
+                userId: this.state.userId
+            }
+                this.props.addSessionOnRegister(firstSession)}
+    })
+}
 
     render() {
         return (
