@@ -24,7 +24,7 @@ export default class SessionList extends Component {
                                 return this.props.PracticeCards
                                 .filter(card =>
                                 (data.cardId === card.id))
-                                .map(card => <PracticeCard key={card.id} session={session} card={card} {...this.props} />)
+                                .map(card => <PracticeCard key={card.id} session={session} data={data} card={card} {...this.props} />)
                                 }
                             )
                     }
