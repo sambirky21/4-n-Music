@@ -10,14 +10,12 @@ export default class PracticeCard extends Component {
       const createPSCard = {
         userId: parseInt(sessionStorage.getItem("userId")),
         practiceId: parseInt(this.props.session.id),
-        // need to get Sessions props from SessionList
         cardId: parseInt(this.props.card.id)
       };
       this.props.createPracticeSessionObject(createPSCard)
         .then(() => this.props.history.push("/cards"))
   }
   render() {
-    console.log("something")
     return (
       <div key={this.props.card.id} className="card w-25 bg-light">
         <div className="card-body">
@@ -49,6 +47,16 @@ export default class PracticeCard extends Component {
               }
             >
               Delete
+            </button>
+            <button
+              type="button"
+              className="btn btn-danger btn-sm"
+              onClick={() =>
+                this.props.deletePracticeSessionCard(this.props.data.id)
+                // this.props.history.push("/cards");
+              }
+            >
+              Remove
             </button>
           </div>
         </div>

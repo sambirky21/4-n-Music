@@ -73,6 +73,17 @@ class ApplicationViews extends Component {
       });
   };
 
+  deletePracticeSessionCard = id => {
+    return APIManager.delete("practiceSessionCards", id)
+      .then(() => APIManager.getAll("practiceSessionCards"))
+      .then(PracticeSessionCards => {
+        this.props.history.push("/practice")
+        this.setState({
+          PracticeSessionCards: PracticeSessionCards
+        });
+      });
+  };
+
   addPracticeCard = PracticeCard => {
     return APIManager.post(PracticeCard, "cards")
       .then(() => APIManager.getAll("cards"))
@@ -151,6 +162,7 @@ class ApplicationViews extends Component {
                   PracticeCards={this.state.PracticeCards}
                   Sessions={this.state.Sessions}
                   PracticeSessionCards={this.state.PracticeSessionCards}
+                  deletePracticeSessionCard={this.deletePracticeSessionCard}
                   // may not have to pass above here anymore. Should just be passed to Category List. Then Category List will be rendered in PracticeList
                 />)
             } else {
@@ -187,6 +199,7 @@ class ApplicationViews extends Component {
                   Sessions={this.state.Sessions}
                   PracticeSessionCards={this.state.PracticeSessionCards}
                   createPracticeSessionObject={this.createPracticeSessionObject}
+                  deletePracticeSessionCard={this.deletePracticeSessionCard}
                 />)
             } else {
               return <Redirect to="/" />;
