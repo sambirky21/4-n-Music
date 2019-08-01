@@ -10,9 +10,11 @@ export default class SessionList extends Component {
       <React.Fragment>
         <section>
             {/* going to filter over all PracticeSessionCards then map over Practice Cards */}
-            {
-                this.props.Sessions.map(session =>
+            {   this.props.Sessions.filter(session =>
+                    session.id === parseInt(sessionStorage.getItem("userId")))
+                .map(session =>
                 <div key={session.id} className="container mt-3 list-group-item list-group-item-light bg-secondary text-white">
+
                     <div className="row flex mt-1">
                     {
                         this.props.PracticeSessionCards
@@ -35,6 +37,12 @@ export default class SessionList extends Component {
     );
   }
 }
+
+// if(this.props.Sessions.userId === parseInt(sessionStorage.getItem("userId")))
+
+ // session.userId === parseInt(sessionStorage.getItem("userId"))
+                // .filter(session =>
+                //     session.userId === parseInt(sessionStorage.getItem("userId")))
 
 // {
 //     this.props.Sessions.map(session =>

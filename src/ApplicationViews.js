@@ -52,6 +52,16 @@ class ApplicationViews extends Component {
       );
   };
 
+  addSessionOnRegister = session => {
+    return APIManager.post(session, "sessions")
+      .then(() => APIManager.getAll("sessions"))
+      .then(Sessions =>
+        this.setState({
+          Sessions: Sessions
+        })
+      );
+  };
+
   deletePracticeCard = id => {
     return APIManager.delete("cards", id)
       .then(() => APIManager.getAll("cards"))
@@ -107,7 +117,7 @@ class ApplicationViews extends Component {
           exact
           path="/register"
           render={props => {
-            return <Register {...props} addUser={this.addUser} />;
+            return <Register {...props} addUser={this.addUser} addSessionOnRegister={this.addSessionOnRegister} />;
           }}
         />
         {/* Start cards routes */}

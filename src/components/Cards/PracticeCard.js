@@ -10,7 +10,7 @@ export default class PracticeCard extends Component {
     {
       const createPSCard = {
         userId: parseInt(sessionStorage.getItem("userId")),
-        practiceId: parseInt(this.props.Sessions[0].id),
+        practiceId: parseInt(this.props.Sessions.id),
         cardId: parseInt(this.props.card.id)
       };
       this.props.createPracticeSessionObject(createPSCard)
