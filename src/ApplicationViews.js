@@ -28,17 +28,17 @@ class ApplicationViews extends Component {
 
     APIManager.getAll("users")
       .then(users => (newState.users = users))
-    APIManager.getAll("cards")
+    .then(() => (APIManager.getAll("cards")))
       .then(cards => (newState.PracticeCards = cards))
-    APIManager.getAll("categories")
-    .then(categories => (newState.Categories = categories))
-    APIManager.getAll("sessions")
+    .then(() => APIManager.getAll("categories"))
+      .then(categories => (newState.Categories = categories))
+    .then(() => APIManager.getAll("sessions"))
       .then(sessions => (newState.Sessions = sessions))
     // Below gets data that contains the foreign keys of sessions and practice cards, not the literal cards
-      APIManager.getAll("practiceSessionCards")
+    .then(() =>APIManager.getAll("practiceSessionCards"))
       .then(practiceData => (newState.PracticeSessionCards = practiceData))
       .then(() => this.setState(newState))
-      .then(console.log(newState))
+      // .then(console.log(newState))
 
   }
 

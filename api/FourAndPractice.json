@@ -136,7 +136,7 @@
   ],
   "sessions": [
     {
-      "userId": 1,
+      "userId": 2,
       "id": 1
     }
   ],
@@ -164,6 +164,12 @@
       "practiceId": 1,
       "cardId": 11,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "practiceId": 1,
+      "cardId": 11,
+      "id": 5
     }
   ],
   "categories": [

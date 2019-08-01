@@ -18,6 +18,7 @@ export default class PracticeCard extends Component {
     }
   }
   render() {
+    console.log("something")
     return (
       <div key={this.props.card.id} className="card w-25 bg-light">
         <div className="card-body">

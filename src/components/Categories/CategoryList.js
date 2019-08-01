@@ -4,6 +4,7 @@ import PracticeCard from "../Cards/PracticeCard";
 
 export default class CategoryList extends Component {
   render() {
+    console.log("something")
     return (
       <React.Fragment>
           <div className="articleButton mt-3">
