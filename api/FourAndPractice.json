@@ -217,6 +217,30 @@
       "practiceId": 1,
       "cardId": 20,
       "id": 4
+    },
+    {
+      "userId": 2,
+      "practiceId": 2,
+      "cardId": 1,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "practiceId": 2,
+      "cardId": 2,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "practiceId": 2,
+      "cardId": 3,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "practiceId": 2,
+      "cardId": 4,
+      "id": 8
     }
   ],
   "categories": [
