@@ -22,6 +22,7 @@ export default class PracticeCard extends Component {
           <div className="card-title">
             <h5 className="text-dark">{this.props.card.title}</h5>
             <p className="text-dark">{this.props.card.description}</p>
+            <p className="text-dark">{this.props.card.time} minute(s)</p>
             <button
               type="button"
               className="btn btn-warning btn-sm"

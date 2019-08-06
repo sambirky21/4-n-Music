@@ -8,6 +8,33 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
+        <header className="flex center">Practice Session</header>
+        <div className="stopwatch border">
+        <h4>Stopwatch</h4>
+        <h3>This will be the title of current card countdown</h3>
+        <span className="stopwatch-time">This will be the time of current card</span>
+        <br />
+        <button
+          onClick={() =>
+            null
+          }
+          type="button"
+          className="btn btn-secondary btn-sm stopwatch_button start"
+        >
+          { "Start"
+              /* {this.props.isRunning && this.props.activeTimer === this.props.index
+            ? "Pause"
+            : "Start"} */}
+        </button>
+        <button
+        disabled={null}
+          onClick={null}
+          type="button"
+          className={`${"btn btn-secondary btn-sm stopwatch_button reset"}`}
+       >
+          Reset
+        </button>
+      </div>
         <section>
             {/* going to filter over all PracticeSessionCards then map over Practice Cards */}
             {   this.props.Sessions.filter(session =>
