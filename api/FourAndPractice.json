@@ -15,36 +15,36 @@
   ],
   "cards": [
     {
+      "id": 1,
       "userId": 2,
       "title": "a",
       "description": "a",
-      "time": "1",
       "categoryId": 1,
-      "id": 1
+      "time": "4"
     },
     {
+      "id": 2,
       "userId": 2,
       "title": "b",
       "description": "b",
-      "time": "1",
       "categoryId": 1,
-      "id": 2
+      "time": "2"
     },
     {
+      "id": 3,
       "userId": 2,
       "title": "c",
       "description": "c",
-      "time": "1",
       "categoryId": 1,
-      "id": 3
+      "time": "3"
     },
     {
+      "id": 4,
       "userId": 2,
       "title": "d",
       "description": "d",
-      "time": "1",
       "categoryId": 1,
-      "id": 4
+      "time": "70"
     },
     {
       "userId": 2,

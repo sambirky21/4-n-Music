@@ -6,12 +6,14 @@ export default class Timer extends Component {
   componentDidMount() {
   }
 
-  parseTime = () => {let totalTime = this.props.time.elapsedTime;
+  parseTime = () => {let totalTime = parseInt(this.props.time);
+    console.log("totaltime in parse time",totalTime)
     let hrs = ~~(totalTime / 3600);
     let mins = ~~((totalTime % 3600) / 60);
     let secs = ~~totalTime % 60;
+    console.log("minutes from parse time", mins)
+    console.log("seconds from partse time", secs)
 
-    // Output like "1:01" or "4:03:59" or "123:03:59"
     let ret = "";
 
     if (hrs > 0) {
@@ -25,13 +27,14 @@ export default class Timer extends Component {
 
   render() {
 
- console.log("this is rendering")
+//  console.log("this is rendering")
     return (
         <React.Fragment>
-      <div key={this.props.index.id} className="timer border">
+      <div key={this.props.index} className="timer border">
         <h4>CountDown Timer</h4>
-        <span className="timer-time">{<h1 className={`${this.props.isRunning ? "fade" : ""}`}>{this.parseTime()}</h1>}</span>
-        <span>{this.props.getTime()}</span>
+        <span className="timer-time">{<h1>{this.parseTime()}</h1>}</span>
+        {/* <span><h2>{`${this.props.getTime(this.props.time)}`}</h2></span> */}
+        <h2>{this.props.time}</h2>
         <br />
         <button
           onClick={() =>
@@ -57,3 +60,4 @@ export default class Timer extends Component {
     );
   }
 }
+// className={`${this.props.isRunning ? "fade" : ""}`}
