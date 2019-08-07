@@ -7,6 +7,7 @@ export default class NewsEditForm extends Component {
     title: "",
     description: "",
     categoryId: "",
+    time: "",
     id: "",
     userId: ""
   };
@@ -20,7 +21,7 @@ export default class NewsEditForm extends Component {
   updateExistingPracticeCard = evt => {
     evt.preventDefault();
 
-    if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" ) {
+    if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" || this.state.time === "" ) {
         window.alert("Please Fill Out All Sections");
     }
     else {
@@ -29,7 +30,8 @@ export default class NewsEditForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             description: this.state.description,
-            categoryId: parseInt(this.state.categoryId)
+            categoryId: parseInt(this.state.categoryId),
+            time: this.state.time
         };
 
     this.props
@@ -45,7 +47,8 @@ export default class NewsEditForm extends Component {
           userId: card.userId,
           title: card.title,
           description: card.description,
-          categoryId: card.categoryId
+          categoryId: card.categoryId,
+          time: card.time
         });
       }
     );
@@ -103,6 +106,18 @@ export default class NewsEditForm extends Component {
                         </option>
                     ))}
                 </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="time">Desired Practice Time</label>
+                <input
+                    type="number"
+                    required
+                    className="form-control"
+                    onChange={this.handleFieldChange}
+                    // will have to change this to state of timer time
+                    id="time"
+                    value={this.state.time}
+                />
             </div>
           <button
             type="submit"

@@ -6,6 +6,7 @@ export default class PracticeCardForm extends Component {
         title: "",
         description: "",
         categoryId: "",
+        time: "",
         id: "",
         userId: ""
     };
@@ -18,7 +19,7 @@ export default class PracticeCardForm extends Component {
 
     constructPracticeCard = evt => {
         evt.preventDefault();
-        if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" ) {
+        if (this.state.title === "" || this.state.description === "" || this.state.categoryId === "" || this.state.time === "" ) {
           window.alert("Please Fill Out All Sections");
         }
         else {
@@ -26,6 +27,7 @@ export default class PracticeCardForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             description: this.state.description,
+            time: this.state.time,
             categoryId: parseInt(this.state.categoryId)
           }
         this.props
@@ -76,6 +78,17 @@ export default class PracticeCardForm extends Component {
                         </option>
                     ))}
                 </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="time">Desired Practice Time</label>
+                <input
+                    type="number"
+                    required
+                    className="form-control"
+                    onChange={this.handleFieldChange}
+                    id="time"
+                    placeholder="Time"
+                />
             </div>
             {/* <div className="form-group">
                 <label htmlFor="synopsis">Synopsis</label>
