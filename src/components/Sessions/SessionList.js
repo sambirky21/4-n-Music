@@ -2,18 +2,34 @@ import React, { Component } from "react";
 import "./sessions.css";
 import PracticeCard from "../Cards/PracticeCard"
 import Timer from "../Timer/Timer"
+import APIManager from "../../module/APIManager"
 
 export default class SessionList extends Component {
 
     state = {
         time: [],
         activeTimer: null,
+        PracticeSessionCards: "",
         isRunning: false,
         elapsedTime: null
     };
 
     componentDidMount() {
-        this.getCardsInSession(this.state.time);
+        console.log("session list mounted", this.props)
+
+        const newState = {};
+
+        APIManager.getAll("cards")
+        .then(cards => (newState.PracticeCards = cards))
+        .then(() => APIManager.getAll("sessions"))
+            .then(sessions => (newState.Sessions = sessions))
+      // Below gets data that contains the foreign keys of sessions and practice cards, not the literal cards
+        .then(() =>APIManager.getAll("practiceSessionCards"))
+            .then(practiceData => (newState.PracticeSessionCards = practiceData))
+        .then(() => this.setState(newState))
+        .then(() => this.getCardsInSession())
+
+
         // doubt the above would would because its an aray you are passing in....
         this.intervalID = setInterval(() => this.tick(), 1000);
         this.getTime();
@@ -24,16 +40,18 @@ export default class SessionList extends Component {
       }
 
       getCardsInSession = () => {
-        this.props.PracticeSessionCards
-            .filter( data =>
-                data.userId === parseInt(sessionStorage.getItem("userId")))
-            .map(data => {
-                return this.props.PracticeCards
-                .filter(card =>
-                (data.cardId === card.id))
-            })
-            // return this.setState({ time: card.time })
-    }
+            const allTime = this.state.PracticeSessionCards
+                                    .filter(psc => psc.userId === parseInt(sessionStorage.getItem("userId")))
+                                    .map(psc => (
+                                        this.state.PracticeCards
+                                            .filter(card => psc.cardId === card.id)
+                                            .map(card => card.time)
+                                    ))
+            const newTimeArray = []
+            // each time is its own array, so we use [0]
+            allTime.forEach(time => newTimeArray.push(time[0]))
+            this.setState({time: allTime})
+            }
 
     getTime = () => {
         let timeOfEachSessionCard = 0
@@ -94,7 +112,7 @@ export default class SessionList extends Component {
               time: cardTime
             };
           });
-          //Timer audio and stop functionality
+          //Timer stop functionality
           if (
             this.state.time.length === this.state.activeTimer + 1 &&
             this.state.time[this.state.activeTimer].elapsedTime === 0
@@ -116,20 +134,22 @@ export default class SessionList extends Component {
 
 
     render() {
-    // console.log("sessions 1", this.props.Sessions)
+    console.log("session list rendering", this.props.PracticeSessionCards)
     return (
 
       <React.Fragment>
         <header className="flex center">Practice Session</header>
 
         <section>
-            <article className="timer">
-            {this.state.time.map((time, index) => (
+            <div className="timer border">
+            {
+                this.state.time.map((time, index) => (
                 <Timer
-                key={time.id}
+                key={index.id}
                 // not sure on above
                 time={time}
                 index={index}
+                getTime={this.getTime}
                 startTimer={this.startTimer}
                 startNextTimer={this.startNextTimer}
                 handleTimer={this.handleTimer}
@@ -138,7 +158,7 @@ export default class SessionList extends Component {
                 isRunning={this.state.isRunning}
                 />
             ))}
-            </article>
+            </div>
         </section>
 
         <section>
@@ -247,3 +267,18 @@ export default class SessionList extends Component {
 //         .map(card => <PracticeCard key={card.id} card={card} {...this.props} />
 //         )
 // }
+
+// {this.getCardsInSession((time, index) => (
+//     <Timer
+//     key={time.id}
+//     // not sure on above
+//     time={time}
+//     index={index}
+//     startTimer={this.startTimer}
+//     startNextTimer={this.startNextTimer}
+//     handleTimer={this.handleTimer}
+//     handleReset={this.handleReset}
+//     activeTimer={this.state.activeTimer}
+//     isRunning={this.state.isRunning}
+//     />
+// ))}

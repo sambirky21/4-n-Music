@@ -25,11 +25,13 @@ export default class Timer extends Component {
 
   render() {
 
-
+ console.log("this is rendering")
     return (
-      <div key={this.props.time.id} className="timer">
+        <React.Fragment>
+      <div key={this.props.index.id} className="timer border">
         <h4>CountDown Timer</h4>
         <span className="timer-time">{<h1 className={`${this.props.isRunning ? "fade" : ""}`}>{this.parseTime()}</h1>}</span>
+        <span>{this.props.getTime()}</span>
         <br />
         <button
           onClick={() =>
@@ -46,11 +48,12 @@ export default class Timer extends Component {
         disabled={this.props.activeTimer === null}
           onClick={this.props.handleReset}
           type="button"
-          className={`${"btn btn-secondary btn-sm stopwatch_button reset"}`}
+          className={`${"btn btn-secondary btn-sm timer_button reset"}`}
        >
           Reset
         </button>
       </div>
+      </React.Fragment>
     );
   }
 }
