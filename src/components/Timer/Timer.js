@@ -29,34 +29,38 @@ export default class Timer extends Component {
 
 //  console.log("this is rendering")
     return (
-        <React.Fragment>
-      <div key={this.props.time.id} className="timer border">
+    <React.Fragment>
+      <div key={this.props.time.id} className="card card-body">
         <h4>CountDown Timer</h4>
         <span className="timer-time">{<h1>{this.parseTime()}</h1>}</span>
         {/* <span><h2>{`${this.props.getTime(this.props.time)}`}</h2></span> */}
         {/* <h2>{this.props.time}</h2> */}
         <br />
         <button
+            type="button"
+            className="btn btn-success btn-sm text-dark"
           onClick={() =>
             this.props.handleTimer(this.props.index, this.props.time)
           }
-          type="button"
-          className="btn btn-secondary btn-sm stopwatch_button start"
+        //   type="button"
+        //   className="btn btn-secondary btn-sm stopwatch_button start"
         >
           {this.props.isRunning && this.props.activeTimer === this.props.index
             ? "Pause"
             : "Start"}
         </button>
         <button
+            type="button"
+            className="btn btn-warning btn-sm text-dark"
         disabled={this.props.activeTimer === null}
           onClick={this.props.handleReset}
-          type="button"
-          className={`${"btn btn-secondary btn-sm timer_button reset"}`}
+        //   type="button"
+        //   className={`${"btn btn-secondary btn-sm timer_button reset"}`}
        >
           Reset
         </button>
       </div>
-      </React.Fragment>
+    </React.Fragment>
     );
   }
 }

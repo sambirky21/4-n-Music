@@ -20,7 +20,7 @@
       "title": "a",
       "description": "a",
       "categoryId": 1,
-      "time": "70"
+      "time": "6"
     },
     {
       "id": 2,
@@ -28,7 +28,7 @@
       "title": "b",
       "description": "b",
       "categoryId": 1,
-      "time": "2"
+      "time": "4"
     },
     {
       "id": 3,
@@ -36,7 +36,7 @@
       "title": "c",
       "description": "c",
       "categoryId": 1,
-      "time": "3"
+      "time": "2"
     },
     {
       "id": 4,
@@ -135,14 +135,6 @@
       "id": 15
     },
     {
-      "userId": 2,
-      "title": "p",
-      "description": "p",
-      "time": "1",
-      "categoryId": 2,
-      "id": 16
-    },
-    {
       "userId": 1,
       "title": "1",
       "description": "1",
@@ -156,7 +148,7 @@
       "title": "2",
       "description": "2",
       "categoryId": 1,
-      "time": "4"
+      "time": "1"
     },
     {
       "id": 19,
@@ -164,7 +156,7 @@
       "title": "3",
       "description": "3",
       "categoryId": 1,
-      "time": "7"
+      "time": "1"
     },
     {
       "id": 20,
@@ -172,7 +164,7 @@
       "title": "4",
       "description": "4",
       "categoryId": 1,
-      "time": "60"
+      "time": "1"
     },
     {
       "userId": 1,
@@ -205,6 +197,14 @@
       "time": "1",
       "categoryId": 2,
       "id": 24
+    },
+    {
+      "userId": 2,
+      "title": "p",
+      "description": "p",
+      "time": "1",
+      "categoryId": 2,
+      "id": 25
     }
   ],
   "sessions": [

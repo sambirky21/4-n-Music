@@ -170,10 +170,10 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
-        <header className="flex center">Practice Session</header>
+        <header className="flex center"><h2>Practice Session</h2></header>
 
-        <section>
-            <div className="timer border">
+        <div className="container mt-3 bg-secondary">
+            <div className="row flex justify-content-between mt-1 mx-auto">
             {
             this.state.time.map((time, index) => (
             <Timer
@@ -190,9 +190,9 @@ export default class SessionList extends Component {
             activeTimer={this.state.activeTimer}
             isRunning={this.state.isRunning}
             />
-        ))}
+            ))}
             </div>
-        </section>
+        </div>
 
         <section>
             {/* going to filter over all PracticeSessionCards then map over Practice Cards */}
