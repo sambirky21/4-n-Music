@@ -149,13 +149,12 @@ export default class SessionList extends Component {
         <section>
             <div className="timer border">
             {
-
+                this.state.time.map((time, index) => (
                 <Timer
-                // key={index}
+                key={index}
                 // not sure on above
-                time={this.state.time}
-                elapsedTime={this.state.elapsedTime}
-                index={this.index}
+                time={time}
+                index={index}
                 getTime={this.getTime}
                 startTimer={this.startTimer}
                 startNextTimer={this.startNextTimer}
@@ -164,7 +163,7 @@ export default class SessionList extends Component {
                 activeTimer={this.state.activeTimer}
                 isRunning={this.state.isRunning}
                 />
-            }
+            ))}
             </div>
         </section>
 
@@ -197,6 +196,38 @@ export default class SessionList extends Component {
     );
   }
 }
+// {
+//     this.state.time.map((time, index) => (
+//     <Timer
+//     key={index}
+//     // not sure on above
+//     time={time}
+//     index={index}
+//     getTime={this.getTime}
+//     startTimer={this.startTimer}
+//     startNextTimer={this.startNextTimer}
+//     handleTimer={this.handleTimer}
+//     handleReset={this.handleReset}
+//     activeTimer={this.state.activeTimer}
+//     isRunning={this.state.isRunning}
+//     />
+// ))}
+// {
+//     <Timer
+//     // key={index}
+//     // not sure on above
+//     time={this.state.time}
+//     elapsedTime={this.state.elapsedTime}
+//     index={this.index}
+//     getTime={this.getTime}
+//     startTimer={this.startTimer}
+//     startNextTimer={this.startNextTimer}
+//     handleTimer={this.handleTimer}
+//     handleReset={this.handleReset}
+//     activeTimer={this.state.activeTimer}
+//     isRunning={this.state.isRunning}
+//     />
+// }
 // .map(session => <PracticeCard key={session.id} session={session} {...this.props} />)
 
 // if(this.props.Sessions.userId === parseInt(sessionStorage.getItem("userId")))
