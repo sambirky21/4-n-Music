@@ -151,28 +151,28 @@
       "id": 17
     },
     {
+      "id": 18,
       "userId": 1,
       "title": "2",
       "description": "2",
-      "time": "1",
       "categoryId": 1,
-      "id": 18
+      "time": "4"
     },
     {
+      "id": 19,
       "userId": 1,
       "title": "3",
       "description": "3",
-      "time": "1",
       "categoryId": 1,
-      "id": 19
+      "time": "7"
     },
     {
+      "id": 20,
       "userId": 1,
       "title": "4",
       "description": "4",
-      "time": "1",
       "categoryId": 1,
-      "id": 20
+      "time": "60"
     },
     {
       "userId": 1,
