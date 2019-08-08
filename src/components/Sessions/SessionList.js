@@ -29,8 +29,8 @@ export default class SessionList extends Component {
         .then(() => this.setState(newState))
 
 
-        .then(() => this.intervalID = setInterval(() => this.tick(), 1000))
         .then(() => this.getCardsInSession())
+        .then(() => this.intervalID = setInterval(() => this.tick(), 1000))
         .then(() =>this.getTime())
     }
 
@@ -45,12 +45,34 @@ export default class SessionList extends Component {
                                         this.state.PracticeCards
                                             .filter(card => psc.cardId === card.id)
                                             .map(card => card.time)
+                                            // .map(cardElapsedTime => {
+                                            //     cardElapsedTime.elapsedTime = parseInt(cardElapsedTime.time)
+                                            //     return cardElapsedTime})
                                     ))
             const newTimeArray = []
             // each time is its own array, so we use [0]
-            allTime.forEach(time => newTimeArray.push(time[0]))
-            this.setState({time: allTime})
+            allTime.forEach(time => newTimeArray.push({time: parseInt(time[0]), elapsedTime: parseInt(time[0])}))
+            this.setState({ time: newTimeArray,
+                            elapsedTime: newTimeArray})
+            // this.getPreviousState()
+            // const timeElapsed = async index => {
+            //     const time = await this.state.elapsedTime(index);
+            //     const prevTime = time.map(time => {
+            //       time.elapsedTime = parseInt(time.elapsedTime);
+            //       return prevTime;
+            //     });
+            //     this.setState({ time: timeElapsed });
+            //   };
             }
+
+    // getPreviousState = () => {
+    //     // const timeElapsed = this.state.elapsedTime === this.state.time
+    //     const prevTime = this.state.time.forEach( time => {
+    //          time.elapsedTime === parseInt(this.state.time)
+    //         return prevTime
+    //     })
+    //     this.setState({elapsedTime: time})
+    // }
 
     getTime = () => {
         let timeOfEachSessionCard = 0
@@ -76,7 +98,9 @@ export default class SessionList extends Component {
 
     startTimer = async index => {
         await this.setState({ activeTimer: index });
-
+        // this.getCardsInSession()
+        // this.intervalID = setInterval(() => this.tick(), 1000)
+        // this.getTime()
       };
 
     startNextTimer = () => {
@@ -110,8 +134,10 @@ export default class SessionList extends Component {
           this.setState(prevState => {
             //   console.log("tick seconds", prevState)
             const cardTime = [...prevState.time];
+            console.log("card time before we subtract 1", cardTime)
             cardTime[prevState.activeTimer].elapsedTime -= 1;
-
+                console.log("weird looking function", cardTime[prevState.activeTimer].elapsedTime -= 1)
+                console.log("card time after we subtract 1", this.state.elapsedTime)
             return {
                 time: cardTime
             };
@@ -144,28 +170,29 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
-        <header className="flex center">Practice Session</header>
+        <header className="flex center"><h2>Practice Session</h2></header>
 
-        <section>
-            <div className="timer border">
+        <div className="container mt-3 bg-secondary">
+            <div className="row flex justify-content-between mt-1 mx-auto">
             {
-                this.state.time.map((time, index) => (
-                <Timer
-                key={index}
-                // not sure on above
-                time={time}
-                index={index}
-                getTime={this.getTime}
-                startTimer={this.startTimer}
-                startNextTimer={this.startNextTimer}
-                handleTimer={this.handleTimer}
-                handleReset={this.handleReset}
-                activeTimer={this.state.activeTimer}
-                isRunning={this.state.isRunning}
-                />
+            this.state.time.map((time, index) => (
+            <Timer
+            key={index}
+            // not sure on above
+            // card={this.card}
+            time={time}
+            index={index}
+            getTime={this.getTime}
+            startTimer={this.startTimer}
+            startNextTimer={this.startNextTimer}
+            handleTimer={this.handleTimer}
+            handleReset={this.handleReset}
+            activeTimer={this.state.activeTimer}
+            isRunning={this.state.isRunning}
+            />
             ))}
             </div>
-        </section>
+        </div>
 
         <section>
             {/* going to filter over all PracticeSessionCards then map over Practice Cards */}
@@ -196,6 +223,23 @@ export default class SessionList extends Component {
     );
   }
 }
+// {
+//     this.state.time.map((time, index) => (
+//     <Timer
+//     key={index}
+//     // not sure on above
+//     // card={this.card}
+//     time={time}
+//     index={index}
+//     getTime={this.getTime}
+//     startTimer={this.startTimer}
+//     startNextTimer={this.startNextTimer}
+//     handleTimer={this.handleTimer}
+//     handleReset={this.handleReset}
+//     activeTimer={this.state.activeTimer}
+//     isRunning={this.state.isRunning}
+//     />
+// ))}
 // {
 //     this.state.time.map((time, index) => (
 //     <Timer
