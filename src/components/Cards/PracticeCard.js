@@ -23,7 +23,7 @@ export default class PracticeCard extends Component {
           <div className="card-title">
             <h5 className="text-dark">{this.props.card.title}</h5>
             <p className="text-dark">{this.props.card.description}</p>
-            <p className="text-dark">{this.props.card.time} seconds</p>
+            <p className="text-dark">{~~(this.props.card.time/60)} minute(s)</p>
             <button
               type="button"
               className="btn btn-warning btn-sm"
@@ -71,7 +71,7 @@ export default class PracticeCard extends Component {
             <div className="card-title">
               <h5 className="text-dark">{this.props.card.title}</h5>
               <p className="text-dark">{this.props.card.description}</p>
-              <p className="text-dark">{this.props.card.time} seconds</p>
+              <p className="text-dark">{(this.props.card.time/60)} minute(s)</p>
               {/* <button
                 type="button"
                 className="btn btn-warning btn-sm"
@@ -101,9 +101,10 @@ export default class PracticeCard extends Component {
               <button
                 type="button"
                 className="btn btn-danger btn-sm"
-                onClick={() =>
-                  this.props.deletePracticeSessionCard(this.props.data.id)
-                  // this.props.history.push("/cards");
+                onClick={() => {
+                  this.props.deletePracticeSessionCard(this.props.data.id);
+                  // this.props.history.push("/practice")
+                }
                 }
               >
                 Remove

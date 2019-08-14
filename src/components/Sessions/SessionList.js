@@ -29,8 +29,8 @@ export default class SessionList extends Component {
         .then(() => this.setState(newState))
 
 
-        .then(() => this.getCardsInSession())
         .then(() => this.intervalID = setInterval(() => this.tick(), 1000))
+        .then(() => this.getCardsInSession())
         .then(() =>this.getTime())
     }
 
@@ -135,8 +135,8 @@ export default class SessionList extends Component {
             //   console.log("tick seconds", prevState)
             const cardTime = [...prevState.time];
             console.log("card time before we subtract 1", cardTime)
-            cardTime[prevState.activeTimer].elapsedTime -= 1;
-                console.log("weird looking function", cardTime[prevState.activeTimer].elapsedTime -= 1)
+            cardTime[prevState.activeTimer].elapsedTime -= .5;
+                console.log("weird looking function", cardTime[prevState.activeTimer].elapsedTime -= .5)
                 console.log("card time after we subtract 1", this.state.elapsedTime)
             return {
                 time: cardTime
@@ -170,7 +170,7 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
-        <header className="flex center"><h2>Practice Session</h2></header>
+        <header className="flex center"><h2>Practice Card {(this.state.activeTimer + 1)}'s Timer</h2></header>
 
         <div className="container mt-3 bg-secondary">
             <div className="row flex justify-content-between mt-1 mx-auto">
@@ -210,7 +210,7 @@ export default class SessionList extends Component {
                                 return this.props.PracticeCards
                                 .filter(card =>
                                 (data.cardId === card.id))
-                                .map(card => <PracticeCard key={card.id} session={session} data={data} card={card} {...this.props} />)
+                                .map(card => <PracticeCard key={card.id} session={session} data={data} card={card} getCardsInSession={this.getCardsInSession} {...this.props} />)
                                 }
                             )
                     }
