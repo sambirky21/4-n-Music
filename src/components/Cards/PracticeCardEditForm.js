@@ -76,7 +76,7 @@ export default class NewsEditForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="url"
+              id="description"
               value={this.state.description}
             />
           </div>
@@ -109,7 +109,7 @@ export default class NewsEditForm extends Component {
             </div>
             <div className="form-group">
                 <label htmlFor="time">Desired Practice Time</label>
-                <input
+                {/* <input
                     type="number"
                     required
                     className="form-control"
@@ -117,7 +117,30 @@ export default class NewsEditForm extends Component {
                     // will have to change this to state of timer time
                     id="time"
                     value={this.state.time}
-                />
+                /> */}
+                <select className="form-control"
+                    value={this.state.time}
+                    name="time"
+                    id="time"
+                    onChange={this.handleFieldChange}
+                    >
+                    <option value="0">Set Time</option>
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="360">6 min</option>
+                    <option value="420">7 min</option>
+                    <option value="480">8 min</option>
+                    <option value="540">9 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                    <option value="2700">45 min</option>
+                    <option value="3600">60 min</option>
+                </select>
             </div>
           <button
             type="submit"

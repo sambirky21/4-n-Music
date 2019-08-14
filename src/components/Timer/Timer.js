@@ -7,6 +7,7 @@ export default class Timer extends Component {
   }
 
   parseTime = () => {let totalTime = this.props.time.elapsedTime;
+    console.log("current state of elapsedtime",this.props.elapsedTime)
     console.log("totaltime in parse time",totalTime)
     let hrs = ~~(totalTime / 3600);
     let mins = ~~((totalTime % 3600) / 60);
@@ -31,7 +32,7 @@ export default class Timer extends Component {
     return (
     <React.Fragment>
       <div key={this.props.time.id} className="card card-body">
-        <h4>CountDown Timer</h4>
+        {/* <h4>Timer</h4> */}
         <span className="timer-time">{<h1>{this.parseTime()}</h1>}</span>
         {/* <span><h2>{`${this.props.getTime(this.props.time)}`}</h2></span> */}
         {/* <h2>{this.props.time}</h2> */}
@@ -40,7 +41,7 @@ export default class Timer extends Component {
             type="button"
             className="btn btn-success btn-sm text-dark"
           onClick={() =>
-            this.props.handleTimer(this.props.index, this.props.time)
+            this.props.handleTimer(this.props.index)
           }
         //   type="button"
         //   className="btn btn-secondary btn-sm stopwatch_button start"

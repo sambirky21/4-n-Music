@@ -36,9 +36,27 @@ export default class PracticeCardForm extends Component {
         }
     }
 
+    adjustTimer = input => {
+        const { time } = this.state;
+          if (input === "incHours" && time + 3600000 < 216000000) {
+            this.setState({ time: time + 3600000 });
+          } else if (input === "decHours" && time - 3600000 >= 0) {
+            this.setState({ time: time - 3600000 });
+          } else if (input === "incMinutes" && time + 60000 < 216000000) {
+            this.setState({ time: time + 60000 });
+          } else if (input === "decMinutes" && time - 60000 >= 0) {
+            this.setState({ time: time - 60000 });
+          } else if (input === "incSeconds" && time + 1000 < 216000000) {
+            this.setState({ time: time + 1000 });
+          } else if (input === "decSeconds" && time - 1000 >= 0) {
+            this.setState({ time: time - 1000 });
+          }
+        }
+
 
     render() {
         return (
+
         <React.Fragment>
             <form className="cardsForm">
             <div className="form-group">
@@ -81,26 +99,40 @@ export default class PracticeCardForm extends Component {
             </div>
             <div className="form-group">
                 <label htmlFor="time">Desired Practice Time</label>
-                <input
-                    type="number"
-                    required
-                    className="form-control"
-                    onChange={this.handleFieldChange}
-                    id="time"
-                    placeholder="Time"
-                />
-            </div>
-            {/* <div className="form-group">
-                <label htmlFor="synopsis">Synopsis</label>
-                <input
+                {/* <input
                     type="text"
                     required
                     className="form-control"
                     onChange={this.handleFieldChange}
-                    id="synopsis"
-                    placeholder="Synopsis"
-                />
-            </div> */}
+                    id="time"
+                    placeholder="00:00:00"
+                /> */}
+                <select className="form-group"
+                    defaultValue=""
+                    name="time"
+                    id="time"
+                    onChange={this.handleFieldChange}
+                    >
+                    <option value="0">Set Time</option>
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="360">6 min</option>
+                    <option value="420">7 min</option>
+                    <option value="480">8 min</option>
+                    <option value="540">9 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                    <option value="2700">45 min</option>
+                    <option value="3600">60 min</option>
+                </select>
+            {/* <input id="time" type="timer" className="form-control" onChange={this.handleFieldChange} ></input> */}
+            </div>
+
             <button
                 type="submit"
                 onClick={this.constructPracticeCard}

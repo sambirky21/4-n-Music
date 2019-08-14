@@ -44,7 +44,7 @@
       "title": "d",
       "description": "d",
       "categoryId": 1,
-      "time": "70"
+      "time": "4"
     },
     {
       "userId": 2,
@@ -205,6 +205,46 @@
       "description": "p",
       "categoryId": 2,
       "time": "1"
+    },
+    {
+      "id": 26,
+      "userId": 2,
+      "title": "sss",
+      "description": "sss",
+      "categoryId": 1,
+      "time": "180"
+    },
+    {
+      "id": 27,
+      "userId": 2,
+      "title": "aaa",
+      "description": "aaaa",
+      "categoryId": 1,
+      "time": "180"
+    },
+    {
+      "id": 28,
+      "userId": 2,
+      "title": "mmm",
+      "description": "mmm",
+      "categoryId": 1,
+      "time": "1800"
+    },
+    {
+      "userId": 2,
+      "title": "wwww",
+      "description": "2222",
+      "time": "3600",
+      "categoryId": 1,
+      "id": 29
+    },
+    {
+      "userId": 2,
+      "title": "dfsdfsd",
+      "description": "ereref",
+      "time": "60",
+      "categoryId": 1,
+      "id": 30
     }
   ],
   "sessions": [
@@ -245,26 +285,20 @@
     {
       "userId": 2,
       "practiceId": 2,
-      "cardId": 1,
+      "cardId": 27,
       "id": 5
     },
     {
       "userId": 2,
       "practiceId": 2,
-      "cardId": 2,
+      "cardId": 28,
       "id": 6
     },
     {
       "userId": 2,
       "practiceId": 2,
-      "cardId": 3,
+      "cardId": 29,
       "id": 7
-    },
-    {
-      "userId": 2,
-      "practiceId": 2,
-      "cardId": 4,
-      "id": 8
     }
   ],
   "categories": [
