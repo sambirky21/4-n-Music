@@ -29,8 +29,8 @@ export default class SessionList extends Component {
         .then(() => this.setState(newState))
 
 
-        .then(() => this.getCardsInSession())
         .then(() => this.intervalID = setInterval(() => this.tick(), 1000))
+        .then(() => this.getCardsInSession())
         .then(() =>this.getTime())
     }
 
@@ -144,7 +144,7 @@ export default class SessionList extends Component {
         });
         //Timer stop functionality
         if (
-            this.state.time.length === this.state.activeTimer + .5 &&
+            this.state.time.length === this.state.activeTimer + 1 &&
             this.state.time[this.state.activeTimer].elapsedTime === 0
             ) {
                 this.setState({ isRunning: false });

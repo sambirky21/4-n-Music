@@ -103,6 +103,7 @@ export default class PracticeCard extends Component {
                 className="btn btn-danger btn-sm"
                 onClick={() => {
                   this.props.deletePracticeSessionCard(this.props.data.id);
+                  // this.props.history.push("/practice")
                 }
                 }
               >

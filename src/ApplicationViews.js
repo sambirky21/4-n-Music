@@ -77,10 +77,10 @@ class ApplicationViews extends Component {
     return APIManager.delete("practiceSessionCards", id)
       .then(() => APIManager.getAll("practiceSessionCards"))
       .then(PracticeSessionCards => {
-        this.props.history.push("/practice")
         this.setState({
           PracticeSessionCards: PracticeSessionCards
         });
+        this.props.history.push("/practice")
       });
   };
 
