@@ -170,10 +170,10 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
-        <header className="flex center"><h2>Practice Card {(this.state.activeTimer + 1)}'s Timer</h2></header>
+        <header className="text-center"><h1>Practice Card {(this.state.activeTimer + 1)}'s Timer</h1></header>
 
-        <div className="container mt-3 bg-secondary">
-            <div className="row flex justify-content-between mt-1 mx-auto">
+        <div className="container rounded mt-3 list-group-item list-group-item-light bg-secondary text-dark">
+            <div className="row flex d-flex justify-content-around mt-1">
             {
             this.state.time.map((time, index) => (
             <Timer
