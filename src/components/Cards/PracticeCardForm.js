@@ -114,6 +114,8 @@ export default class PracticeCardForm extends Component {
                     onChange={this.handleFieldChange}
                     >
                     <option value="0">Set Time</option>
+                    <option value="30">30 Seconds</option>
+                    <option value="45">45 Seconds</option>
                     <option value="60">1 min</option>
                     <option value="120">2 min</option>
                     <option value="180">3 min</option>

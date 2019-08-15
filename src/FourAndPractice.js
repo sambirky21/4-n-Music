@@ -4,6 +4,11 @@ import ApplicationViews from "./ApplicationViews";
 
 class FourAndPractice extends Component {
   render() {
+    if(sessionStorage.getItem("userId")===null) {
+      return (
+        <ApplicationViews />
+      )
+    }
     return (
       <React.Fragment>
         <NavBar />
