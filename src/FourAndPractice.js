@@ -4,11 +4,6 @@ import ApplicationViews from "./ApplicationViews";
 
 class FourAndPractice extends Component {
   render() {
-    if(sessionStorage.getItem("userId")===null) {
-      return (
-        <ApplicationViews />
-      )
-    }
     return (
       <React.Fragment>
         <NavBar />
@@ -19,3 +14,17 @@ class FourAndPractice extends Component {
 }
 
 export default FourAndPractice;
+
+// render() {
+//   if(sessionStorage.getItem("userId")===null) {
+//     return (
+//       <ApplicationViews />
+//     )
+//   }
+//   return (
+//     <React.Fragment>
+//       <NavBar />
+//       <ApplicationViews />
+//     </React.Fragment>
+//   );
+// }

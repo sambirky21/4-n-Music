@@ -80,17 +80,6 @@ export default class NewsEditForm extends Component {
               value={this.state.description}
             />
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="synopsis">Synopsis</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="synopsis"
-              value={this.state.synopsis}
-            />
-          </div> */}
             <div className="form-group">
                 <label htmlFor="categoryId">Category</label>
                 <select
@@ -109,15 +98,6 @@ export default class NewsEditForm extends Component {
             </div>
             <div className="form-group">
                 <label htmlFor="time">Desired Practice Time</label>
-                {/* <input
-                    type="number"
-                    required
-                    className="form-control"
-                    onChange={this.handleFieldChange}
-                    // will have to change this to state of timer time
-                    id="time"
-                    value={this.state.time}
-                /> */}
                 <select className="form-control"
                     value={this.state.time}
                     name="time"
@@ -125,6 +105,8 @@ export default class NewsEditForm extends Component {
                     onChange={this.handleFieldChange}
                     >
                     <option value="0">Set Time</option>
+                    <option value="30">30 Seconds</option>
+                    <option value="45">45 Seconds</option>
                     <option value="60">1 min</option>
                     <option value="120">2 min</option>
                     <option value="180">3 min</option>

@@ -2,7 +2,6 @@ import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import PracticeCardEditForm from "./components/Cards/PracticeCardEditForm"
-// import PracticeCardsList from "./components/Cards/PracticeCardsList";
 import CategoryList from "./components/Categories/CategoryList"
 import PracticeCardForm from "./components/Cards/PracticeCardForm";
 import SessionList from "./components/Sessions/SessionList"
@@ -132,23 +131,6 @@ class ApplicationViews extends Component {
           }}
         />
         {/* Start cards routes */}
-        {/* <Route
-          exact
-          path="/cards"
-          render={props => {
-            if (this.isAuthenticated()) {
-                  return (<PracticeCardsList
-                  {...props}
-                  deletePracticeCard={this.deletePracticeCard}
-                  Categories={this.state.Categories}
-                  PracticeCards ={this.state.PracticeCards}
-                  // may not have to pass above here anymore. Should just be passed to Category List. Then Category List will be rendered in PracticeList
-                />)
-            } else {
-              return <Redirect to="/" />;
-            }
-          }}
-        /> */}
         <Route
           exact
           path="/cards"

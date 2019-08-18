@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom"
-// import { Redirect } from 'react-router'
 import "./cards.css";
+import music from "./music-icon-transparent-11.jpg"
 
 export default class PracticeCard extends Component {
 
@@ -20,6 +19,7 @@ export default class PracticeCard extends Component {
     return (
       <div key={this.props.card.id} className="card w-25 bg-light">
         <div className="card-body">
+          <img className="music-icon" src={music}></img>
           <div className="card-title">
             <h5 className="text-dark">{this.props.card.title}</h5>
             <p className="text-dark">{this.props.card.description}</p>

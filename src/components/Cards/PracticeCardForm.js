@@ -99,14 +99,6 @@ export default class PracticeCardForm extends Component {
             </div>
             <div className="form-group">
                 <label htmlFor="time">Desired Practice Time</label>
-                {/* <input
-                    type="text"
-                    required
-                    className="form-control"
-                    onChange={this.handleFieldChange}
-                    id="time"
-                    placeholder="00:00:00"
-                /> */}
                 <select className="form-group"
                     defaultValue=""
                     name="time"
@@ -132,7 +124,6 @@ export default class PracticeCardForm extends Component {
                     <option value="2700">45 min</option>
                     <option value="3600">60 min</option>
                 </select>
-            {/* <input id="time" type="timer" className="form-control" onChange={this.handleFieldChange} ></input> */}
             </div>
 
             <button
