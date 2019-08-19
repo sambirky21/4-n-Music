@@ -28,14 +28,10 @@ export default class Timer extends Component {
 
   render() {
 
-//  console.log("this is rendering")
     return (
     <React.Fragment>
-      <div key={this.props.time.id} className="card card-body">
-        {/* <h4>Timer</h4> */}
-        <span className="timer-time">{<h1>{this.parseTime()}</h1>}</span>
-        {/* <span><h2>{`${this.props.getTime(this.props.time)}`}</h2></span> */}
-        {/* <h2>{this.props.time}</h2> */}
+      <div key={this.props.time.id} className="card card-body bg-light">
+        <span className="timer-time text-secondary">{<h1>{this.parseTime()}</h1>}</span>
         <br />
         <button
             type="button"
@@ -43,8 +39,6 @@ export default class Timer extends Component {
           onClick={() =>
             this.props.handleTimer(this.props.index)
           }
-        //   type="button"
-        //   className="btn btn-secondary btn-sm stopwatch_button start"
         >
           {this.props.isRunning && this.props.activeTimer === this.props.index
             ? "Pause"
@@ -55,8 +49,6 @@ export default class Timer extends Component {
             className="btn btn-warning btn-sm text-dark"
         disabled={this.props.activeTimer === null}
           onClick={this.props.handleReset}
-        //   type="button"
-        //   className={`${"btn btn-secondary btn-sm timer_button reset"}`}
        >
           Reset
         </button>
@@ -65,4 +57,3 @@ export default class Timer extends Component {
     );
   }
 }
-// className={`${this.props.isRunning ? "fade" : ""}`}

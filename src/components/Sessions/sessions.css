@@ -33,3 +33,11 @@
     justify-content: space-evenly;
     flex-wrap: wrap
   }
+
+.container {
+    background-color: #0E6EB8;
+}
+
+.sessionTitle {
+    color: #0E6EB8;
+}

@@ -6,6 +6,7 @@ export default class CategoryList extends Component {
   render() {
     return (
       <React.Fragment>
+          {/* <h3>4 and | Practice</h3> */}
           <div className="articleButton mt-3">
           <button
             type="button"
@@ -20,7 +21,7 @@ export default class CategoryList extends Component {
         <section>
         {
             this.props.Categories.map(category =>
-            <div key={category.id} className="container mt-3 list-group-item list-group-item-light bg-secondary text-white">
+            <div key={category.id} className="container mt-3 list-group-item list-group-item-light text-white">
                 <h5>{category.title}</h5>
                 <div className="row flex mt-1">
                 {
