@@ -1,7 +1,11 @@
 .music-icon-nav {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 35%;
+    margin-right: 40%;
     width: 50px;
     height: 50px;
+}
+
+.menuStuff {
+    color: #0E6EB8;
 }

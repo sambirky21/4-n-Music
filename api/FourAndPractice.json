@@ -15,28 +15,20 @@
   ],
   "cards": [
     {
+      "id": 1,
       "userId": 1,
       "title": "sss",
       "description": "sss",
-      "time": "60",
-      "categoryId": 1,
-      "id": 1
+      "categoryId": 2,
+      "time": "60"
     },
     {
+      "id": 2,
       "userId": 1,
       "title": "opsjf",
       "description": "dsofpja",
-      "time": "30",
       "categoryId": 2,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "title": "pdjfposdf",
-      "description": "dfjasd[foi",
-      "time": "45",
-      "categoryId": 1,
-      "id": 3
+      "time": "10"
     }
   ],
   "sessions": [
@@ -49,26 +41,7 @@
       "id": 2
     }
   ],
-  "practiceSessionCards": [
-    {
-      "userId": 1,
-      "practiceId": 1,
-      "cardId": 1,
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "practiceId": 1,
-      "cardId": 3,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "practiceId": 1,
-      "cardId": 2,
-      "id": 3
-    }
-  ],
+  "practiceSessionCards": [],
   "categories": [
     {
       "title": "Rhythm",

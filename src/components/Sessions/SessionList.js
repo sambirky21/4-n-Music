@@ -150,7 +150,7 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
-        <header className="text-center"><h1>Practice Card {(this.state.activeTimer + 1)}'s Timer</h1></header>
+        <header className="text-center"><h1 className="sessionTitle">Practice Card {(this.state.activeTimer + 1)}'s Timer</h1></header>
 
         <div className="container rounded mt-3 list-group-item list-group-item-light text-dark">
             <div className="row flex d-flex justify-content-around mt-1">

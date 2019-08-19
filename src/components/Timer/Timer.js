@@ -30,8 +30,8 @@ export default class Timer extends Component {
 
     return (
     <React.Fragment>
-      <div key={this.props.time.id} className="card card-body">
-        <span className="timer-time">{<h1>{this.parseTime()}</h1>}</span>
+      <div key={this.props.time.id} className="card card-body bg-light">
+        <span className="timer-time text-secondary">{<h1>{this.parseTime()}</h1>}</span>
         <br />
         <button
             type="button"

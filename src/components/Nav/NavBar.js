@@ -19,8 +19,8 @@ class NavBar extends Component {
         const { activeItem } = this.state
         return (
             <Menu tabular>
-                <Menu.Item as={Link} to="/cards" name='Cards' active={activeItem === 'Cards'} onClick={this.handleItemClick} />
-                <Menu.Item as={Link} to="/practice" name='Practice' active={activeItem === 'Practice'} onClick={this.handleItemClick} />
+                <Menu.Item className="ui blue text" as={Link} to="/cards" name='Cards' active={activeItem === 'Cards'} onClick={this.handleItemClick} />
+                <Menu.Item className="ui blue text" as={Link} to="/practice" name='Practice' active={activeItem === 'Practice'} onClick={this.handleItemClick} />
                 <img className="music-icon-nav" src={musicnav}></img>
                 <Button className="ui primary right menu" as={Link} to="/" content='Logout' onClick={() => sessionStorage.clear()} />
             </Menu>

@@ -6,7 +6,7 @@ export default class CategoryList extends Component {
   render() {
     return (
       <React.Fragment>
-          <h3>4 and | Practice</h3>
+          {/* <h3>4 and | Practice</h3> */}
           <div className="articleButton mt-3">
           <button
             type="button"
