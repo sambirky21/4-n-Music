@@ -7,6 +7,7 @@ export default class CategoryList extends Component {
     return (
       <React.Fragment>
           {/* <h3>4 and | Practice</h3> */}
+          <body className="musicBackground">
           <div className="articleButton mt-3">
           <button
             type="button"
@@ -46,6 +47,7 @@ export default class CategoryList extends Component {
             </div>
         )}
         </section>
+        </body>
       </React.Fragment>
     );
   }

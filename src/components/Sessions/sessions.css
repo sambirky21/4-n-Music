@@ -41,3 +41,8 @@
 .sessionTitle {
     color: #0E6EB8;
 }
+
+.musicBackground {
+    background-image: url("music-icon-transparent-11.jpg");
+    background-size: 33%;
+}
