@@ -150,6 +150,7 @@ export default class SessionList extends Component {
     return (
 
       <React.Fragment>
+        <body className="musicBackground">
         <header className="text-center"><h1 className="sessionTitle">Practice Card {(this.state.activeTimer + 1)}'s Timer</h1></header>
 
         <div className="container rounded mt-3 list-group-item list-group-item-light text-dark">
@@ -196,7 +197,8 @@ export default class SessionList extends Component {
                 </div>
                 )
             }
-        </section>
+            </section>
+        </body>
       </React.Fragment>
     );
   }

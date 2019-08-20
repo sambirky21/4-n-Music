@@ -15,19 +15,99 @@
   ],
   "cards": [
     {
-      "id": 1,
       "userId": 1,
-      "title": "sss",
-      "description": "sss",
-      "categoryId": 2,
-      "time": "60"
+      "title": "Simple Meter",
+      "description": "The Rhythm Book - Exercises 2.6, 2.10, 2.11",
+      "time": "15",
+      "categoryId": 1,
+      "id": 1
     },
     {
       "id": 2,
       "userId": 1,
-      "title": "opsjf",
-      "description": "dsofpja",
+      "title": "Pick-up Notes",
+      "description": "The Rhythm Book - Exercises 3.9, 3.12, 3.15",
+      "categoryId": 1,
+      "time": "15"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "Ties in Compound Meter",
+      "description": "The Rhythm Book - Exercises 7.5, 7.8, 7.9",
+      "categoryId": 1,
+      "time": "15"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "Group I Scales in Notation",
+      "description": "Bb natural minor",
       "categoryId": 2,
+      "time": "15"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "title": "Group 1 Scales in Notation",
+      "description": "G# natural minor",
+      "categoryId": 2,
+      "time": "15"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "title": "Block Chord Cadences, I IV I V7 I",
+      "description": "C Major, page 34",
+      "categoryId": 3,
+      "time": "15"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "title": "Block Chord Cadences, I IV I V7 I",
+      "description": "F Major, page 34",
+      "categoryId": 3,
+      "time": "15"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "title": "Block Chord Cadences, I IV I V7 I",
+      "description": "G Major, page 34",
+      "categoryId": 3,
+      "time": "15"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "title": "Block Chord Cadences, I IV I V7 I",
+      "description": "D Major, page 34",
+      "categoryId": 3,
+      "time": "15"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "title": "Interval Training with Piano",
+      "description": "perfect fifth",
+      "categoryId": 4,
+      "time": "15"
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "title": "Interval Training with Piano",
+      "description": "octave",
+      "categoryId": 4,
+      "time": "15"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "title": "Inteval Training",
+      "description": "minor 3rds",
+      "categoryId": 4,
       "time": "10"
     }
   ],
@@ -41,7 +121,32 @@
       "id": 2
     }
   ],
-  "practiceSessionCards": [],
+  "practiceSessionCards": [
+    {
+      "userId": 1,
+      "practiceId": 1,
+      "cardId": 12,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "practiceId": 1,
+      "cardId": 4,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "practiceId": 1,
+      "cardId": 5,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "practiceId": 1,
+      "cardId": 2,
+      "id": 4
+    }
+  ],
   "categories": [
     {
       "title": "Rhythm",
